@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "$"
+var prefix = "."
 var adminprefix = '$'
 
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("$obc")) {
+    if (message.content.startsWith(".obc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -23,7 +23,7 @@ client.on("message", message => {
 //bc online
 
 
-  var prefix = "$";
+  var prefix = ".";
 
   client.on("message", message => {
   
@@ -57,7 +57,7 @@ client.on('ready',  () => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('Ladminbc')){
-if(!message.author.id === '476185102922285066') return;
+if(!message.author.id === '541631676007186434') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
@@ -66,7 +66,7 @@ m.sendMessage(args)
 });
 
   client.on('message', msg => {
-    if(msg.content === '$help')
+    if(msg.content === '.help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
@@ -90,7 +90,7 @@ m.sendMessage(args)
    }
    });
 
-const developers = ["467023557281447936"]
+const developers = ["541631676007186434"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
@@ -125,4 +125,4 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 });
 
 
-client.login("NTQwMTYyNTUwNzEzNTQ4ODEw.DzM5Pg.LbWV-Nr2XLvqXRkYMqbhmJ4_xwM");
+client.login(process.env.BOT_TOKEN);
